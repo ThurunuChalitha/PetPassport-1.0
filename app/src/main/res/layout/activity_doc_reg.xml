@@ -18,8 +18,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btn_dr_reg">
+        android:layout_gravity="center_horizontal">
 
     </TextView>
     <LinearLayout
@@ -68,41 +67,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:id="@+id/ph_n0"
+            android:id="@+id/dr_ph_n0"
             android:hint="Contact Number">
         </EditText>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:id="@+id/e_mail"
+            android:id="@+id/dr_e_mail"
             android:hint="E mail address">
         </EditText>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/usr_name"
+            android:id="@+id/drusr_name"
             android:hint="Username">
         </EditText>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/pwd"
+            android:id="@+id/dr_pwd"
             android:hint="Password">
         </EditText>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/re_pwd"
+            android:id="@+id/dr_re_pwd"
             android:hint="Confirm Password">
         </EditText>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/btn_dr_reg"
             android:text="REGISTER">
 
         </Button>

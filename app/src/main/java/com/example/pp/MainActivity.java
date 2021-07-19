@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            UserData user=new UserData (user_name,nic_no,address,phone_no,email,usr_name,password,re_password);
+                            UserData user=new UserData (user_name,nic_no,address,phone_no,email,usr_name);
 
                             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser()
                                     .getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

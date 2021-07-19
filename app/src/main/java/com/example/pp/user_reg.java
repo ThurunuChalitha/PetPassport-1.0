@@ -33,8 +33,6 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth mAuth;
     private FirebaseDatabase root;
     private DatabaseReference ref;
-    private DatabaseReference ref1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +86,7 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
         String pwd=ePwd.getText().toString().trim();
         String re_pwd=eRe_pwd.getText().toString().trim();
 
-        UserData userdata =new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name,pwd,re_pwd);
+        UserData userdata =new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name);
         ref.child(nic_no).setValue(userdata);
 
         if (user_name.isEmpty()){
@@ -141,6 +139,7 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
             eRe_pwd.requestFocus();
             return;
         }
+
         if(re_pwd.length()<6){
             eRe_pwd.setError("Enter minimum of 6 characters");
             eRe_pwd.requestFocus();
@@ -154,7 +153,7 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
                         ref = root.getReference("Users");
 
                         if(task.isSuccessful()){
-                            UserData userdata=new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name,pwd,re_pwd);
+                            UserData userdata=new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name);
                             ref.child(mAuth.getCurrentUser().getUid()).setValue(userdata, new DatabaseReference.CompletionListener() {
                                 @Override
                                 public void onComplete(@Nullable DatabaseError error, @NonNull  DatabaseReference ref) {
