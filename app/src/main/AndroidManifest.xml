@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PP">
-        <activity android:name=".MyProfile"></activity>
+        <activity android:name=".MyPets"></activity>
+        <activity android:name=".MyProfile" />
         <activity android:name=".View_pet" />
         <activity android:name=".Homepage" />
         <activity android:name=".Pet_detail" />

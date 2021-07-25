@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Registration-PET OWNER"
+        android:text="Pet Registration"
         android:textSize="25dp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/e_mail"
+            android:id="@+id/remarks"
             android:hint="Special Remarks">
         </EditText>
 
