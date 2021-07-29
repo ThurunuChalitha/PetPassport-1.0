@@ -20,7 +20,6 @@ public class Homepage extends AppCompatActivity {
     CardView cardScnID;
     CardView cardCalDoc;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,14 @@ public class Homepage extends AppCompatActivity {
         cardMyPet.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), View_pet.class));
+                startActivity(new Intent(getApplicationContext(), Pet_detail.class));
+            }
+        });
+
+        cardScnID.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

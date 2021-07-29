@@ -87,28 +87,6 @@
             android:id="@+id/usr_name"
             android:hint="Username">
         </EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:id="@+id/pwd"
-            android:hint="Password">
-        </EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:id="@+id/re_pwd"
-            android:hint="Confirm Password">
-        </EditText>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="SAVE"
-            android:id="@+id/btn_user_save">
-
-        </Button>
 
     </LinearLayout>
 

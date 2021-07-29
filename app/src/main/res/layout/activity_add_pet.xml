@@ -82,7 +82,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/btn_adpet"
+            android:id="@+id/btn_newEntry"
             android:text="ADD">
 
         </Button>

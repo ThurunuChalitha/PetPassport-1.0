@@ -3,6 +3,7 @@
     package="com.example.pp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PP">
-        <activity android:name=".MyPets"></activity>
+        <activity android:name=".PetDocView"></activity>
+        <activity android:name=".ScanQR" />
+        <activity android:name=".MyPets" />
         <activity android:name=".MyProfile" />
-        <activity android:name=".View_pet" />
         <activity android:name=".Homepage" />
         <activity android:name=".Pet_detail" />
         <activity android:name=".Add_pet" />
