@@ -1,5 +1,6 @@
 package com.example.pp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -10,6 +11,13 @@ import android.widget.Button;
 
 import com.example.pp.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 
 public class Homepage extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -19,6 +27,8 @@ public class Homepage extends AppCompatActivity {
     CardView cardMyPet;
     CardView cardScnID;
     CardView cardCalDoc;
+
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +60,14 @@ public class Homepage extends AppCompatActivity {
         cardScnID.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+            }
+        });
+
+        cardMyPrf.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MyProfile.class));
 
             }
         });

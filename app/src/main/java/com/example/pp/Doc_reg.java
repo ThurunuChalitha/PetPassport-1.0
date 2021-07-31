@@ -86,7 +86,7 @@ public class Doc_reg extends AppCompatActivity implements View.OnClickListener{
         String dre_pwd=dRe_pwd.getText().toString().trim();
 
         DrData drdata =new DrData(dr_name,slva_no,vet_office,d_phone_n0,d_e_mail,d_usr_name);
-        ref.child(slva_no).setValue(drdata);
+        //ref.child(slva_no).setValue(drdata);
 
         if (dr_name.isEmpty()){
             dUser_name.setError("Name is required!");

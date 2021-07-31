@@ -11,7 +11,7 @@
     android:background="@color/backg2">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Username"
         android:textSize="20dp"
@@ -19,7 +19,7 @@
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/View_user_name">
+        android:id="@+id/View_user_nameh">
 
     </TextView>
     <LinearLayout
@@ -45,48 +45,103 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/user_name"
-            android:hint="Name">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Name:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/nic_no"
-            android:hint="NIC Number">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="NIC No:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_nicNo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/addrs"
-            android:hint="Address">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Address:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_address"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:id="@+id/ph_n0"
-            android:hint="Contact Number">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Contact Number:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_pHNo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:id="@+id/e_mail"
-            android:hint="E mail address">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Email Address:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_eMail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/usr_name"
-            android:hint="Username">
-        </EditText>
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Username:  "></TextView>
+
+            <TextView
+                android:id="@+id/View_usrName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"></TextView>
+        </LinearLayout>
 
     </LinearLayout>
 

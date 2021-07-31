@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,6 +34,8 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth mAuth;
     private FirebaseDatabase root;
     private DatabaseReference ref;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,8 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
 
         imUser= (ImageView)findViewById(R.id.usr_image);
         imUser.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -86,8 +91,9 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
         String pwd=ePwd.getText().toString().trim();
         String re_pwd=eRe_pwd.getText().toString().trim();
 
+
         UserData userdata =new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name);
-        ref.child(nic_no).setValue(userdata);
+        //ref.child(nic_no).setValue(userdata);
 
         if (user_name.isEmpty()){
             eUser_name.setError("Name is required!");
