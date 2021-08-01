@@ -19,47 +19,37 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 
-public class Homepage extends AppCompatActivity {
+public class DocHome extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
-    CardView cardAddPet;
-    CardView cardMyPrf;
-    CardView cardMyPet;
-    CardView cardCalDoc;
+
+    CardView card_DocPP;
+    CardView cardScnID;
+
 
     DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_doc_home);
         mAuth=FirebaseAuth.getInstance();
 
-        cardAddPet=findViewById(R.id.addPet);
-        cardMyPet=findViewById(R.id.card_myPets);
-        cardMyPrf=findViewById(R.id.myPrf);
-        cardCalDoc=findViewById(R.id.card_callDoc);
+        card_DocPP=findViewById(R.id.card_DocPrf);
+        cardScnID=findViewById(R.id.card_scnID);
 
 
-        cardAddPet.setOnClickListener(new View.OnClickListener(){
+        cardScnID.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Add_pet.class));
+
             }
         });
 
-        cardMyPet.setOnClickListener(new View.OnClickListener(){
+        card_DocPP.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Pet_detail.class));
-            }
-        });
-
-
-        cardMyPrf.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MyProfile.class));
+                startActivity(new Intent(getApplicationContext(), DocProfile.class));
 
             }
         });

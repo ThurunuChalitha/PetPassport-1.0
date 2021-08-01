@@ -9,31 +9,31 @@
     android:background="@drawable/back"
     android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/mainImg"
-            android:layout_width="match_parent"
-            android:layout_height="1in"
-            android:src="@drawable/main" />
+    <ImageView
+        android:id="@+id/mainImg"
+        android:layout_width="match_parent"
+        android:layout_height="1in"
+        android:src="@drawable/doctor" />
 
-        <TextView
-            android:id="@+id/myImageViewText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/mainImg"
-            android:layout_alignTop="@id/mainImg"
-            android:layout_alignRight="@id/mainImg"
-            android:layout_alignBottom="@id/mainImg"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="-5dp"
-            android:layout_marginBottom="-23dp"
-            android:gravity="center"
-            android:text="Hello there..."
-            android:textStyle="italic"
-            android:textSize="30dp"
-            android:textColor="#000000" />
+    <TextView
+        android:id="@+id/myImageViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mainImg"
+        android:layout_alignTop="@id/mainImg"
+        android:layout_alignRight="@id/mainImg"
+        android:layout_alignBottom="@id/mainImg"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="-5dp"
+        android:layout_marginBottom="-23dp"
+        android:gravity="center"
+        android:text="  Hello   Doctor..."
+        android:textStyle="italic"
+        android:textSize="45dp"
+        android:textColor="#000000" />
 
 
     <GridLayout
@@ -41,10 +41,8 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/mainImg"
         android:layout_marginTop="10dp"
-        android:columnCount="2"
+        android:columnCount="1"
         android:rowCount="3"
-
-        android:padding="10dp"
         android:layout_margin="20dp">
 
         <androidx.cardview.widget.CardView
@@ -58,40 +56,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true"
-            android:id="@+id/addPet"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_addmypet" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ADD PET"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_row="0"
-            android:layout_column="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            android:id="@+id/myPrf">
+            android:id="@+id/card_DocPrf">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -112,6 +77,7 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,7 +89,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true"
-            android:id="@+id/card_myPets">
+            android:id="@+id/card_scnID">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -134,11 +100,11 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/ic_mypets" />
+                    android:src="@drawable/ic_scanid" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MY PETS"
+                    android:text="SCAN ID"
                     android:textSize="16sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -146,61 +112,25 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_callDoc"
-            android:layout_width="81dp"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_callmydoc" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CALL DOC"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="2"
-            android:layout_column="1"
+            android:layout_column="0"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true"
             android:onClick="Logout"
-            android:id="@+id/card_lgOut"
-            >
+            android:id="@+id/card_lgOut">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:layout_rowSpan="2">
+                android:gravity="center">
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"

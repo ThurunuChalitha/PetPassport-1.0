@@ -157,7 +157,7 @@ public class Doc_reg extends AppCompatActivity implements View.OnClickListener{
                                 @Override
                                 public void onComplete(@Nullable DatabaseError error, @NonNull  DatabaseReference ref) {
                                     if(task.isSuccessful()){
-                                        startActivity(new Intent(Doc_reg.this, Homepage.class));
+                                        startActivity(new Intent(Doc_reg.this, DocHome.class));
                                         Toast.makeText(Doc_reg.this, "User Registration successful!", Toast.LENGTH_LONG).show();
                                     }else{
                                         Toast.makeText(Doc_reg.this,"Failed to this",Toast.LENGTH_LONG).show();
