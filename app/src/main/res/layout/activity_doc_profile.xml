@@ -19,7 +19,8 @@
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/View_doc_nameh">
+        android:id="@+id/View_doc_nameh"
+        >
 
     </TextView>
     <LinearLayout
@@ -53,12 +54,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Name:  "></TextView>
+                android:text="Name:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_doc_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
                 ></TextView>
         </LinearLayout>
 
@@ -70,13 +73,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="SLVA Reg No:  "></TextView>
+                android:text="SLVA Reg No:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_slvaNo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                ></TextView>
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -87,12 +91,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Veterinary Surgeon Office:  "></TextView>
+                android:text="Veterinary Surgeon Office:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_vetOffice"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -103,12 +109,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Contact Number:  "></TextView>
+                android:text="Contact Number:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_pHDNo"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -119,12 +127,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Email Address:  "></TextView>
+                android:text="Email Address:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_DeMail"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -135,12 +145,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Username:  "></TextView>
+                android:text="Username:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_usrDName"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
     </LinearLayout>

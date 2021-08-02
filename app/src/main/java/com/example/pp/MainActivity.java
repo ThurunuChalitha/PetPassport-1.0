@@ -20,7 +20,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.NotNull;
 
 import org.w3c.dom.Text;
 
@@ -30,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     Button login, reg;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    private FirebaseDatabase rootNode;
+    private DatabaseReference userReference;
+    private DatabaseReference docReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,27 +89,46 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
+                rootNode = FirebaseDatabase.getInstance();
+                userReference = rootNode.getReference("Users");
+                docReference = rootNode.getReference("Doctors");
 
                 fAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            UserData user=new UserData (user_name,nic_no,address,phone_no,email,usr_name);
-
-                            FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser()
-                                    .getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            userReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
-                                public void onComplete(@NonNull  Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(MainActivity.this,"User successfully added!",Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
-                                        startActivity(new Intent(MainActivity.this,Homepage.class));
+                                public void onComplete(@NonNull @NotNull Task<DataSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
+                                            UserData userDataFromFirebase = dataSnapshot.getValue(UserData.class);
+                                            if (userDataFromFirebase != null) {
+                                                if (email.equals(userDataFromFirebase.getEmail())) {
+                                                    startActivity(new Intent(MainActivity.this,Homepage.class));
+                                                    Toast.makeText(MainActivity.this,"Login Successful for user!",Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             });
-
-                            startActivity(new Intent(MainActivity.this,Homepage.class));
-                            Toast.makeText(MainActivity.this,"Login Successful!",Toast.LENGTH_SHORT).show();
+                            docReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull @NotNull Task<DataSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
+                                            DrData drDataFromFirebase = dataSnapshot.getValue(DrData.class);
+                                            if (drDataFromFirebase != null) {
+                                                if (email.equals(drDataFromFirebase.getDr_email())) {
+                                                    startActivity(new Intent(MainActivity.this,DocHome.class));
+                                                    Toast.makeText(MainActivity.this,"Login Successful for doctoer!",Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            });
                         }else{
                             Toast.makeText(MainActivity.this,"Error!",Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);

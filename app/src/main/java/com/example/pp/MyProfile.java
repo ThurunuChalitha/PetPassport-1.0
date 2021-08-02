@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +32,7 @@ public class MyProfile extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         root = FirebaseDatabase.getInstance();
         user=mAuth.getCurrentUser();
+        Log.d("AAAAAAAAAAAAAAAAAAAAAA",user.getUid());
 
         String currentU=user.getUid();
 
@@ -48,7 +50,6 @@ public class MyProfile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 String NameH=snapshot.child("user_name").getValue().toString();
-                String Name=snapshot.child("user_name").getValue().toString();
                 String NIC=snapshot.child("nic_no").getValue().toString();
                 String Address=snapshot.child("address").getValue().toString();
                 String cNo=snapshot.child("phone_no").getValue().toString();
@@ -56,7 +57,7 @@ public class MyProfile extends AppCompatActivity {
                 String USRname=snapshot.child("usr_name").getValue().toString();
 
                 nameh.setText(NameH);
-                name.setText(Name);
+                name.setText(NameH);
                 nic.setText(NIC);
                 adddrs.setText(Address);
                 pHno.setText(cNo);

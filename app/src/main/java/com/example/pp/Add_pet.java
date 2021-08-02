@@ -25,6 +25,7 @@ public class Add_pet extends AppCompatActivity implements View.OnClickListener {
     private EditText eBreed;
     private EditText eRemarks;
     private EditText eBirthday;
+    private EditText eAnimal;
     private String eUser;
     private ImageView imPet;
     private Button btPet_reg;
@@ -47,6 +48,7 @@ public class Add_pet extends AppCompatActivity implements View.OnClickListener {
         ref = root.getReference("Pets");
 
         ePet_name=(EditText)findViewById(R.id.pet_name);
+        eAnimal=(EditText)findViewById(R.id.pet_animal);
         eGender=(EditText)findViewById(R.id.gender);
         eBreed=(EditText)findViewById(R.id.breed);
         eRemarks=(EditText)findViewById(R.id.remarks);
@@ -87,11 +89,12 @@ public class Add_pet extends AppCompatActivity implements View.OnClickListener {
         String breed=eBreed.getText().toString().trim();
         String remarks=eRemarks.getText().toString().trim();
         String pet_bd=eBirthday.getText().toString().trim();
+        String pet_animal=eAnimal.getText().toString().trim();
         //String currentUser= current_usr.getText().toString().trim();
 
         String currentUser=user.getUid();
 
-        PetData petdata =new PetData(pet_name,gender,breed,remarks,pet_bd,currentUser);
+        PetData petdata =new PetData(pet_name,gender,breed,remarks,pet_bd,currentUser,pet_animal);
         String key = ref.push().getKey();
         ref.child(key).setValue(petdata, new DatabaseReference.CompletionListener() {
             @Override
@@ -121,8 +124,13 @@ public class Add_pet extends AppCompatActivity implements View.OnClickListener {
             eRemarks.requestFocus();
             return;
         }if (pet_bd.isEmpty()){
-            eBirthday.setError("Remarks are required!");
+            eBirthday.setError("Birthday is required!");
             eBirthday.requestFocus();
+            return;
+        }
+        if (pet_animal.isEmpty()){
+            eAnimal.setError("Birthday is required!");
+            eAnimal.requestFocus();
             return;
         }
 

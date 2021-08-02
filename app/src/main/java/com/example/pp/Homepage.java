@@ -51,7 +51,7 @@ public class Homepage extends AppCompatActivity {
         cardMyPet.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Pet_detail.class));
+                startActivity(new Intent(getApplicationContext(), MyPets.class));
             }
         });
 

@@ -53,12 +53,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Name:  "></TextView>
+                android:text="Name:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
                 ></TextView>
         </LinearLayout>
 
@@ -70,12 +72,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="NIC No:  "></TextView>
+                android:text="NIC No:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_nicNo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
                 ></TextView>
         </LinearLayout>
 
@@ -87,12 +91,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Address:  "></TextView>
+                android:text="Address:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_address"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -103,12 +109,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Contact Number:  "></TextView>
+                android:text="Contact Number:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_pHNo"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -119,12 +127,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Email Address:  "></TextView>
+                android:text="Email Address:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_eMail"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -135,12 +145,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Username:  "></TextView>
+                android:text="Username:  "
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/View_usrName"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></TextView>
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
     </LinearLayout>
