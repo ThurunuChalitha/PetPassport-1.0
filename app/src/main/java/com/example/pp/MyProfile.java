@@ -32,7 +32,7 @@ public class MyProfile extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         root = FirebaseDatabase.getInstance();
         user=mAuth.getCurrentUser();
-        Log.d("AAAAAAAAAAAAAAAAAAAAAA",user.getUid());
+        //Log.d("AAAAAAAAAAAAAAAAAAAAAA",user.getUid());
 
         String currentU=user.getUid();
 
