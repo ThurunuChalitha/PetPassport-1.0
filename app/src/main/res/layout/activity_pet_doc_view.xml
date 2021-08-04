@@ -11,20 +11,20 @@
     android:background="@color/backg5">
 
     <TextView
+        android:id="@+id/Dpet_name_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PET NAME"
-        android:textSize="25dp"
-        android:id="@+id/pet_name_view"
-        android:textStyle="bold"
-        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal">
+        android:text="PET NAME"
+        android:textAlignment="center"
+        android:textColor="#090909"
+        android:textSize="25dp">
 
     </TextView>
     <LinearLayout
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:orientation="vertical"
         android:layout_gravity="center">
 
@@ -43,71 +43,132 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/pet_name"
-            android:hint="Pet Name">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Pet Name:  "
+                android:textStyle="bold"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/DView_petName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
-            android:id="@+id/pet_bd"
-            android:hint="Birthday">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Animal:  "
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/DView_animal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/gender"
-            android:hint="Gender">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Gender:  "
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/DView_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/breed"
-            android:hint="Breed">
-        </EditText>
-        <EditText
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Birthday:  "
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/DView_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/e_mail"
-            android:hint="Special Remarks">
-        </EditText>
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Breed:  "
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/DView_breed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Special Remarks:  "
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/DView_remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/vac_detail"
+            android:id="@+id/Dvac_detail"
             android:text="Vaccinations">
 
-        </Button><Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tests"
-        android:text="Special tests">
-
-    </Button>
+        </Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pres"
+            android:id="@+id/Dtests"
+            android:text="Special tests">
+
+        </Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Dpres"
             android:text="Prescriptions">
 
         </Button>
 
-        <Button
-            android:id="@+id/btn_newEntry"
-            android:layout_width="164dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="NEW ENTRY"
-            android:shadowColor="@color/teal_200">
-
-        </Button>
 
     </LinearLayout>
 

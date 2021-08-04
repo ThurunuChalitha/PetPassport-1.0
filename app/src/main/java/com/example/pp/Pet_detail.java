@@ -1,8 +1,11 @@
 package com.example.pp;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,10 +13,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pet_detail extends AppCompatActivity {
 
+    //Button btonQR;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_detail);
+
+        //btonQR=findViewById(R.id.btnQRG);
+
+        //btonQR.setOnClickListener(new View.OnClickListener(){
+            //@Override
+            //public void onClick(View v) {
+                //startActivity(new Intent(getApplicationContext(), GenQR.class));
+            //}
+        //});
+
 
         Bundle bundle = getIntent().getExtras();
         String petNAME = bundle.getString("pet_Name");

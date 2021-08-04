@@ -25,16 +25,17 @@ import java.util.List;
 public class PetDB extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final List<String> eventNamesList;
-    private final List<String> dateList;
+    private final List<String> Pet_List;
+    private final List<String> Type_List;
     private final List<Bitmap> imageList;
 
-    public PetDB(Activity context, List<String> eventNamesList, List<String> dateList, List<Bitmap> imageList) {
-        super(context, R.layout.pet_item, eventNamesList);
+
+    public PetDB(Activity context, List<String> Pet_List, List<String> Type_List, List<Bitmap> imageList) {
+        super(context, R.layout.pet_item, Pet_List);
 
         this.context = context;
-        this.eventNamesList = eventNamesList;
-        this.dateList = dateList;
+        this.Pet_List = Pet_List;
+        this.Type_List = Type_List;
         this.imageList = imageList;
     }
 
@@ -46,8 +47,8 @@ public class PetDB extends ArrayAdapter<String> {
         TextView AnimalT = (TextView) rowView.findViewById(R.id.Atype);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imagePet);
 
-        petN.setText(eventNamesList.get(position));
-        AnimalT.setText(dateList.get(position));
+        petN.setText(Pet_List.get(position));
+        AnimalT.setText(Type_List.get(position));
         imageView.setImageBitmap(imageList.get(position));
         return rowView;
     }

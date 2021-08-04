@@ -13,4 +13,8 @@
     <color name="backg3">#CDBEE8</color>
     <color name="backg4">#C6EFEB</color>
     <color name="backg5">#F4D7AD</color>
+    <color name="tool1">#ED3C78</color>
+    <color name="tool2">#02F60C</color>
+    <color name="tool3">#FF9903</color>
+    <color name="tool4">#E448FF</color>
 </resources>

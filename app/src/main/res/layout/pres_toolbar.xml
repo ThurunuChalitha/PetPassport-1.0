@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/tool4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          PRESCRIPTIONS"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

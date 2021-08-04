@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -34,6 +35,7 @@ public class MyPets extends AppCompatActivity {
     private DatabaseReference petReference;
     private FirebaseAuth auth;
     private FirebaseUser user;
+    //private List<String> keyPetList = new ArrayList<>();
     private List<String> petNameList = new ArrayList<>();
     private List<String> animalList = new ArrayList<>();
     private List<String> bdList = new ArrayList<>();
@@ -72,6 +74,8 @@ public class MyPets extends AppCompatActivity {
                                     remarksList.add(petDataFromFirebase.getRemarks());
                                     imageList.add(Bitmap.createScaledBitmap(commonImg, 500, 500, true));
                                 }
+                            } else{
+                                Toast.makeText(MyPets.this,"No pet entries found, Add pets",Toast.LENGTH_LONG).show();
                             }
                         }
                     }

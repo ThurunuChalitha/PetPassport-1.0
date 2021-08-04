@@ -7,14 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MyPets"
     android:orientation="vertical">
-    <include layout="@layout/mypets_toolbar" />
+    <include layout="@layout/tests_toolbar" />
 
-        <ListView
-            android:id="@+id/list_pet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="2dp"/>
+    <ListView
+        android:id="@+id/tests_pet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"/>
 
 </LinearLayout>
-
 
