@@ -8,34 +8,24 @@
     tools:context=".ScanQR"
     android:padding="20dp">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
-        android:id="@+id/imgQR"/>
-
-    <EditText
-        android:id="@+id/textQR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Input"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="text"
-        android:inputType="text"
-        />
-
     <Button
-        android:id="@+id/btnQR"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textQR"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CONVERT"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerInParent="true"
+        android:text="SCAN"
+        android:onClick="ScanButton"
+        android:textSize="30sp"></Button>
+
+    <TextView
+        android:layout_width="304dp"
+        android:layout_height="153dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:id="@+id/text_qr"
+        android:text="Text Apeaars here"
+        android:textSize="30dp"></TextView>
+
 
 </RelativeLayout>

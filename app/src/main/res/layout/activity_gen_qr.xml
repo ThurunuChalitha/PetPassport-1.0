@@ -16,25 +16,15 @@
         android:layout_marginBottom="170dp"
         android:id="@+id/imgQR"/>
 
-    <EditText
+    <TextView
         android:id="@+id/textQR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:textAlignment="center"
         android:hint="text"
         android:inputType="text"
-        />
-
-    <Button
-        android:id="@+id/btnQRG"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textQR"
-        android:layout_height="wrap_content"
-        android:text="CONVERT"
-        android:layout_centerHorizontal="true"
-        />
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>

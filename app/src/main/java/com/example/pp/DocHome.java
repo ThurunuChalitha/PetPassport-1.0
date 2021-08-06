@@ -42,6 +42,7 @@ public class DocHome extends AppCompatActivity {
         cardScnID.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ScanQR.class));
 
             }
         });

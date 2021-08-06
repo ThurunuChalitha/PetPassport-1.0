@@ -42,6 +42,7 @@ public class MyPets extends AppCompatActivity {
     private List<String> breedList = new ArrayList<>();
     private List<String> genderList = new ArrayList<>();
     private List<String> remarksList = new ArrayList<>();
+    private List<String> keyList = new ArrayList<>();
     private List<Bitmap> imageList = new ArrayList<>();
     PetDB adapter;
 
@@ -66,6 +67,7 @@ public class MyPets extends AppCompatActivity {
                         if (userId != null) {
                             if (petDataFromFirebase != null) {
                                 if (userId.equals(petDataFromFirebase.getCurrentUser())) {
+                                    keyList.add(dataSnapshot.getKey());
                                     petNameList.add(petDataFromFirebase.getPet_name());
                                     animalList.add(petDataFromFirebase.getPet_animal());
                                     bdList.add(petDataFromFirebase.getPet_bd());
@@ -80,14 +82,15 @@ public class MyPets extends AppCompatActivity {
                         }
                     }
 
-                    executeListView(petNameList, animalList, imageList,bdList,breedList,genderList,remarksList);
+                    executeListView(petNameList, animalList, imageList,bdList,breedList,genderList,remarksList, keyList);
                 }
             }
         });
     }
 
     private void executeListView(List<String> eventNamesList, List<String> dateList, List<Bitmap> imageList,
-                                 List<String> bdList, List<String> breedList, List<String> genderList,List<String> remarksList ) {
+                                 List<String> bdList, List<String> breedList, List<String> genderList,
+                                 List<String> remarksList, List<String> keyList) {
 
         adapter = new PetDB(this, eventNamesList, dateList, imageList);
         ListView listView = (ListView) findViewById(R.id.list_pet);
@@ -98,6 +101,7 @@ public class MyPets extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent openAcivity = new Intent(MyPets.this, Pet_detail.class);
                 openAcivity.putExtra("pet_Name", petNameList.get(position));
+                openAcivity.putExtra("pet_key", keyList.get(position));
                 openAcivity.putExtra("pet_Bd", bdList.get(position));
                 openAcivity.putExtra("pet_Animal", animalList.get(position));
                 openAcivity.putExtra("pet_Gender", genderList.get(position));

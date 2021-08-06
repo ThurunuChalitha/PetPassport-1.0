@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PP">
-        <activity android:name=".GenQR"></activity>
+        <activity android:name=".FormVacc"></activity>
+        <activity android:name=".FormTests" />
+        <activity android:name=".FormPres" />
+        <activity android:name=".GenQR" />
         <activity android:name=".ViewPres" />
         <activity android:name=".ViewTest" />
         <activity android:name=".ViewVacc" />
@@ -35,6 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
     </application>
 
 </manifest>

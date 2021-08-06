@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pet_detail extends AppCompatActivity {
 
-    //Button btonQR;
+    Button btonQR;
 
 
     @Override
@@ -21,23 +21,27 @@ public class Pet_detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_detail);
 
-        //btonQR=findViewById(R.id.btnQRG);
-
-        //btonQR.setOnClickListener(new View.OnClickListener(){
-            //@Override
-            //public void onClick(View v) {
-                //startActivity(new Intent(getApplicationContext(), GenQR.class));
-            //}
-        //});
+        btonQR=findViewById(R.id.btn_petID);
 
 
         Bundle bundle = getIntent().getExtras();
+        String pet_key = bundle.getString("pet_key");
         String petNAME = bundle.getString("pet_Name");
         String pet_Bd = bundle.getString("pet_Bd");
         String pet_Animal = bundle.getString("pet_Animal");
         String pet_Gender = bundle.getString("pet_Gender");
         String pet_Breed = bundle.getString("pet_Breed");
         String pet_Remarks = bundle.getString("pet_Remarks");
+
+        btonQR.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openAcivity = new Intent(Pet_detail.this, GenQR.class);
+                openAcivity.putExtra("pet_Name_frm_pet_detail", petNAME);
+                openAcivity.putExtra("pet_key_from_pet_detail", pet_key);
+                startActivity(openAcivity);
+            }
+        });
 
         //byte[] byteArray = getIntent().getByteArrayExtra("image");
         //Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
