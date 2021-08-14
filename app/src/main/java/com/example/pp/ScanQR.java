@@ -26,9 +26,7 @@ public class ScanQR extends AppCompatActivity {
         textDisp=findViewById(R.id.text_qr);
 
         ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
-    }
 
-    public void ScanButton(View view){
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         //integrator.setCaptureActivity(CaptureAct.class);
@@ -46,6 +44,9 @@ public class ScanQR extends AppCompatActivity {
             }
             else{
                 textDisp.setText(result.getContents());
+                Intent openAcivity = new Intent(ScanQR.this, PetDocView.class);
+                openAcivity.putExtra("pet_key", result.getContents());
+                startActivity(openAcivity);
             }
         }
         super.onActivityResult(requestCode,resultCode,data);

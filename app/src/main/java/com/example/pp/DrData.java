@@ -1,19 +1,20 @@
 package com.example.pp;
 
 public class DrData {
-    public String dr_name,slva_no,vet_office,dr_phone_no,dr_email,dr_usr_name;
+    public String dr_name,slva_no,vet_office,dr_phone_no,dr_email,dr_usr_name, dr_id;
 
     public DrData() {
 
     }
 
-    public DrData(String dr_name,String slva_no,String vet_office,String dr_phone_no,String dr_email,String dr_usr_name){
+    public DrData(String dr_name,String slva_no,String vet_office,String dr_phone_no,String dr_email,String dr_usr_name,String dr_id){
         this.dr_name=dr_name;
         this.slva_no=slva_no;
         this.vet_office=vet_office;
         this.dr_phone_no=dr_phone_no;
         this.dr_email=dr_email;
         this.dr_usr_name=dr_usr_name;
+        this.dr_id=dr_id;
 
     }
 
@@ -40,4 +41,6 @@ public class DrData {
     public String getDr_usr_name() {
         return dr_usr_name;
     }
+
+    public String getDr_id() { return dr_id; }
 }

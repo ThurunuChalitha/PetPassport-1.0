@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Pet_detail extends AppCompatActivity {
 
     Button btonQR;
+    Button vaccine;
+    Button test;
+    Button prescribe;
 
 
     @Override
@@ -22,6 +25,9 @@ public class Pet_detail extends AppCompatActivity {
         setContentView(R.layout.activity_pet_detail);
 
         btonQR=findViewById(R.id.btn_petID);
+        vaccine=findViewById(R.id.vac_detail);
+        test=findViewById(R.id.tests);
+        prescribe=findViewById(R.id.pres);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -40,6 +46,39 @@ public class Pet_detail extends AppCompatActivity {
                 openAcivity.putExtra("pet_Name_frm_pet_detail", petNAME);
                 openAcivity.putExtra("pet_key_from_pet_detail", pet_key);
                 startActivity(openAcivity);
+            }
+        });
+
+        btonQR.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openAcivity = new Intent(Pet_detail.this, GenQR.class);
+                openAcivity.putExtra("pet_Name_frm_pet_detail", petNAME);
+                openAcivity.putExtra("pet_key_from_pet_detail", pet_key);
+                startActivity(openAcivity);
+            }
+        });
+
+        vaccine.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewVacc.class));
+            }
+        });
+
+        test.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewTest.class));
+
+            }
+        });
+
+        prescribe.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewPres.class));
+
             }
         });
 

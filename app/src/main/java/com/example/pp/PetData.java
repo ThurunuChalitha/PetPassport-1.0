@@ -18,7 +18,6 @@ public class PetData {
         this.currentUser=currentUser;
         this.pet_animal=pet_animal;
 
-
     }
 
 

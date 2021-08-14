@@ -23,8 +23,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="text"
+        android:textSize="50dp"
+        android:hint="Hello Pet"
         android:inputType="text"
+        android:textColor="@color/black"
         android:gravity="center_horizontal" />
 
 </RelativeLayout>

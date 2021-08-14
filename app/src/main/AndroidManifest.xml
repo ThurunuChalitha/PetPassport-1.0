@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PP">
-        <activity android:name=".FormVacc"></activity>
+        <activity android:name=".DocVacc"></activity>
+        <activity android:name=".FormVacc" />
         <activity android:name=".FormTests" />
         <activity android:name=".FormPres" />
         <activity android:name=".GenQR" />
@@ -39,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"

@@ -28,7 +28,7 @@ import com.google.firebase.database.annotations.NotNull;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    String user_name,nic_no,address,phone_no,usr_name,password,re_password;
+    //String user_name,nic_no,address,phone_no,usr_name,password,re_password;
     EditText txtMail,txtPassword;
     Button login, reg;
     ProgressBar progressBar;
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase rootNode;
     private DatabaseReference userReference;
     private DatabaseReference docReference;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +55,42 @@ public class MainActivity extends AppCompatActivity {
 
         fAuth=FirebaseAuth.getInstance();
 
+        rootNode = FirebaseDatabase.getInstance();
+        userReference = rootNode.getReference("Users");
+        docReference = rootNode.getReference("Doctors");
+
+
+        
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(),Homepage.class));
-            finish();
+            String currentUserId = fAuth.getCurrentUser().getUid();
+            userReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull  Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
+                            UserData userData = dataSnapshot.getValue(UserData.class);
+                            if (userData.user_id.equals(currentUserId)) {
+                                startActivity(new Intent(getApplicationContext(),Homepage.class));
+                                finish();
+                            }
+                        }
+                    }
+                }
+            });
+            docReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull  Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
+                            DrData drData = dataSnapshot.getValue(DrData.class);
+                            if (drData.dr_id.equals(currentUserId)) {
+                                startActivity(new Intent(getApplicationContext(),DocHome.class));
+                                finish();
+                            }
+                        }
+                    }
+                }
+            });
         }
 
 
@@ -89,9 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
-                rootNode = FirebaseDatabase.getInstance();
-                userReference = rootNode.getReference("Users");
-                docReference = rootNode.getReference("Doctors");
+
 
                 fAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -122,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                                             if (drDataFromFirebase != null) {
                                                 if (email.equals(drDataFromFirebase.getDr_email())) {
                                                     startActivity(new Intent(MainActivity.this,DocHome.class));
-                                                    Toast.makeText(MainActivity.this,"Login Successful for doctoer!",Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(MainActivity.this,"Login Successful for doctor!",Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         }

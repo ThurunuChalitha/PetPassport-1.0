@@ -42,10 +42,11 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_reg);
 
-        mAuth=FirebaseAuth.getInstance();
+
 
         root = FirebaseDatabase.getInstance();
         ref = root.getReference("Users");
+        mAuth=FirebaseAuth.getInstance();
 
         eUser_name=(EditText)findViewById(R.id.user_name);
         eNic_no=(EditText)findViewById(R.id.nic_no);
@@ -91,9 +92,6 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
         String pwd=ePwd.getText().toString().trim();
         String re_pwd=eRe_pwd.getText().toString().trim();
 
-
-        UserData userdata =new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name);
-        //ref.child(nic_no).setValue(userdata);
 
         if (user_name.isEmpty()){
             eUser_name.setError("Name is required!");
@@ -157,9 +155,10 @@ public class user_reg extends AppCompatActivity implements View.OnClickListener 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         ref = root.getReference("Users");
+                        mAuth=FirebaseAuth.getInstance();
 
                         if(task.isSuccessful()){
-                            UserData userdata=new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name);
+                            UserData userdata=new UserData(user_name,nic_no,addrs,ph_n0,e_mail,usr_name,mAuth.getCurrentUser().getUid());
                             ref.child(mAuth.getCurrentUser().getUid()).setValue(userdata, new DatabaseReference.CompletionListener() {
                                 @Override
                                 public void onComplete(@Nullable DatabaseError error, @NonNull  DatabaseReference ref) {

@@ -37,10 +37,11 @@ public class Doc_reg extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_reg);
 
-        mAuth=FirebaseAuth.getInstance();
+
 
         root = FirebaseDatabase.getInstance();
         ref = root.getReference("Doctors");
+        mAuth=FirebaseAuth.getInstance();
 
         dUser_name=(EditText)findViewById(R.id.dr_name);
         dslva=(EditText)findViewById(R.id.slva_no);
@@ -85,8 +86,6 @@ public class Doc_reg extends AppCompatActivity implements View.OnClickListener{
         String d_pwd=dPwd.getText().toString().trim();
         String dre_pwd=dRe_pwd.getText().toString().trim();
 
-        DrData drdata =new DrData(dr_name,slva_no,vet_office,d_phone_n0,d_e_mail,d_usr_name);
-        //ref.child(slva_no).setValue(drdata);
 
         if (dr_name.isEmpty()){
             dUser_name.setError("Name is required!");
@@ -150,9 +149,10 @@ public class Doc_reg extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         ref = root.getReference("Doctors");
+                        mAuth=FirebaseAuth.getInstance();
 
                         if(task.isSuccessful()){
-                            DrData drdata=new DrData(dr_name,slva_no,vet_office,d_phone_n0,d_e_mail,d_usr_name);
+                            DrData drdata=new DrData(dr_name,slva_no,vet_office,d_phone_n0,d_e_mail,d_usr_name,mAuth.getCurrentUser().getUid());
                             ref.child(mAuth.getCurrentUser().getUid()).setValue(drdata, new DatabaseReference.CompletionListener() {
                                 @Override
                                 public void onComplete(@Nullable DatabaseError error, @NonNull  DatabaseReference ref) {
