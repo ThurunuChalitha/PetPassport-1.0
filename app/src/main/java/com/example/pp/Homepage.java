@@ -78,7 +78,6 @@ public class Homepage extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Homepage.this);
         builder.setTitle("Exit");
-        //builder.setIcon(R.mipmap.ic_launcher);
         builder.setMessage("Do you want to exit from the app?")
                 .setCancelable(true)
                 .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
